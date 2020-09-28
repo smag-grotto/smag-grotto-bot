@@ -6,5 +6,5 @@ The Discord bot for Smag Grotto.
 
 #### Register with the website
 ```
-.smag register <bio>
+.smag register
 ```
