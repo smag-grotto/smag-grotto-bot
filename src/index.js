@@ -22,16 +22,13 @@ client.on('message', message => {
       body: JSON.stringify({ name, picture }),
       headers: { 'Content-Type': 'application/json' }
     })
-      .then(res => {
+      .then(async res => [res, await res.json()])
+      .then(([res, json]) => {
         if (res.status === 400) return message.channel.send('**Error:** You are already registered');
-        return res.json();
+
+        return message.channel.send(`You are now registered. Check yourself out here: http://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}/members`);
       })
-      .then(() => {
-        message.channel.send(`You are now registered. Check yourself out here: http://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}/members`);
-      })
-      .catch(err => {
-        message.channel.send(`Failed to connect to the API.\n\`\`\`${err.message}\`\`\``);
-      })
+      .catch(err => message.channel.send(`Failed to connect to the API.\n\`\`\`${err.message}\`\`\``));
   }
 });
 
