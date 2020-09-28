@@ -1,0 +1,22 @@
+{
+  "name": "smag-grotto-bot",
+  "version": "1.0.0",
+  "description": "The Discord bot for Smag Grotto.",
+  "main": "src/index.js",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smag-grotto/smag-grotto-bot.git"
+  },
+  "author": "Jake Ruston",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smag-grotto/smag-grotto-bot/issues"
+  },
+  "homepage": "https://github.com/smag-grotto/smag-grotto-bot#readme"
+}
